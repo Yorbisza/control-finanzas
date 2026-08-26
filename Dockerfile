@@ -34,4 +34,4 @@ EXPOSE 8080
 
 # Comando de arranque: Limpiar caché, migrar y servir
 # Usamos un script de una sola línea para asegurar que si algo falla, lo veamos en los logs
-CMD php artisan config:clear && php artisan migrate --force && php artisan serve --host 0.0.0.0 --port 8080
+CMD php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan serve --host 0.0.0.0 --port 8080

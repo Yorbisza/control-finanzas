@@ -86,7 +86,7 @@ return [
 
 'pgsql' => [
     'driver' => 'pgsql',
-    'url' => env('DATABASE_URL'), // Asegúrate de que esta línea exista
+    'url' => env('DATABASE_URL'),
     'host' => env('DB_HOST', '127.0.0.1'),
     'port' => env('DB_PORT', '5432'),
     'database' => env('DB_DATABASE', 'forge'),
@@ -96,12 +96,10 @@ return [
     'prefix' => '',
     'prefix_indexes' => true,
     'search_path' => 'public',
-    'sslmode' => 'require',
-    // AÑADE ESTO DE AQUÍ ABAJO:
-    'options' => [
-        1009 => 1,
-    ],
+    'sslmode' => env('DB_SSLMODE', 'prefer'), // Cambiado a prefer o lo que diga la variable
+    'options' => [], // Vacía este array por ahora
 ],
+
 
 
         'sqlsrv' => [
