@@ -99,8 +99,6 @@ return [
     'sslmode' => 'prefer', // Cambia 'require' por 'prefer' para probar
     'options'  => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        // ESTA ES LA LÍNEA CLAVE:
-        PDO::PGSQL_ATTR_SSL_MODE => PDO::PGSQL_ATTR_SSL_MODE_REQUIRED,
     ],
 ],
 
