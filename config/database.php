@@ -98,6 +98,9 @@ return [
     'search_path' => 'public',
     'sslmode' => env('DB_SSLMODE', 'require'),
     'sslrootcert' => env('DB_SSLROOTCERT', ''),
+    'options' => [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ],
 ],
         'sqlsrv' => [
             'driver' => 'sqlsrv',
