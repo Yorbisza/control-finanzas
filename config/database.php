@@ -86,7 +86,7 @@ return [
 
 'pgsql' => [
     'driver' => 'pgsql',
-    'url' => env('DATABASE_URL'),
+    'url' => env('DATABASE_URL'), // Asegúrate de que esta línea exista
     'host' => env('DB_HOST', '127.0.0.1'),
     'port' => env('DB_PORT', '5432'),
     'database' => env('DB_DATABASE', 'forge'),
@@ -96,11 +96,13 @@ return [
     'prefix' => '',
     'prefix_indexes' => true,
     'search_path' => 'public',
-    'sslmode' => 'prefer', // Cambia 'require' por 'prefer' para probar
-    'options'  => [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    'sslmode' => 'require',
+    // AÑADE ESTO DE AQUÍ ABAJO:
+    'options' => [
+        PDO::PGSQL_ATTR_SSL_MODE => PDO::PGSQL_ATTR_SSL_MODE_REQUIRED,
     ],
 ],
+
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
