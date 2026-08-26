@@ -99,7 +99,7 @@ return [
     'sslmode' => 'require',
     // AÑADE ESTO DE AQUÍ ABAJO:
     'options' => [
-        PDO::PGSQL_ATTR_SSL_MODE => PDO::PGSQL_ATTR_SSL_MODE_REQUIRED,
+        1009 => 1,
     ],
 ],
 
